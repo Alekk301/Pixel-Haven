@@ -6,6 +6,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
+    [SerializeField] private Transform weaponCollider;
 
     private PlayerControls playerControls;
     private Animator myAnimator;
@@ -43,9 +44,16 @@ public class NewBehaviourScript : MonoBehaviour
     private void Attack()
     {
         myAnimator.SetTrigger("Attack");
+        weaponCollider.gameObject.SetActive(true);
 
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
+    }
+
+
+    public void DoneAttackingAnimEvent()
+    {
+        weaponCollider.gameObject.SetActive(false);
     }
 
     public void SwingUpFlipAnim()
@@ -79,10 +87,13 @@ public class NewBehaviourScript : MonoBehaviour
         if (mousePos.x < playerScreenPoint.x)
         {
             activeWeapon.transform.rotation = Quaternion.Euler(0, -180, angle);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);
         }
         else
         {
             activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
+            weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
+
         }
     }
 
