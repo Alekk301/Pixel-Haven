@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
+
 using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
-    public bool gettingKnockedback { get; private set; }
+    public bool GettingKnockedback { get; private set; }
 
     [SerializeField] private float knockBackTime = .2f;
 
@@ -19,7 +18,7 @@ public class Knockback : MonoBehaviour
     public void GetKnockedBack(Transform damageSource, float knockBackThrust)
     {
 
-        gettingKnockedback = true;
+        GettingKnockedback = true;
         Vector2 difference = knockBackThrust * rb.mass * (transform.position - damageSource.position).normalized;
         rb.AddForce(difference, ForceMode2D.Impulse);
         StartCoroutine(KnockRoutine());
@@ -29,7 +28,7 @@ public class Knockback : MonoBehaviour
     {
         yield return new WaitForSeconds(knockBackTime);
         rb.velocity = Vector2.zero;
-        gettingKnockedback = false;
+        GettingKnockedback = false;
     }
 
 }
