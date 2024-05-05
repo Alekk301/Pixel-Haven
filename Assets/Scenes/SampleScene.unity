@@ -1940,6 +1940,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2380151374992222702, guid: c4d78c48f410cc3469a6d07d4e3a8874, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 4023758362560167345, guid: c4d78c48f410cc3469a6d07d4e3a8874, type: 3}
       propertyPath: moveSpeed
       value: 1
@@ -1948,6 +1952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 7407108325399397747, guid: c4d78c48f410cc3469a6d07d4e3a8874, type: 3}
+      propertyPath: whiteFlashMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 27b73d60fcd250f4eb75730b39f9f1c9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
