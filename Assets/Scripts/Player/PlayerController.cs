@@ -6,7 +6,7 @@ using UnityEngine.Scripting.APIUpdating;
 public class PlayerController : Singleton<PlayerController>
 {
     public bool FacingLeft { get { return facingLeft; } }
-    public static PlayerController Instance;
+
 
 
 

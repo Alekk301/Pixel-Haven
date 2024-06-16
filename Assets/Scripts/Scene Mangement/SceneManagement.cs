@@ -5,10 +5,10 @@ using UnityEngine;
 public class SceneManagement : Singleton<SceneManagement>
 {
 
-    public string SceneTRansitionName { get; private set; }
+    public string SceneTransitionName { get; private set; }
 
     public void SetTransitionName(string sceneTransitionName)
     {
-        this.SceneTRansitionName = sceneTransitionName;
+        this.SceneTransitionName = sceneTransitionName;
     }
 }
